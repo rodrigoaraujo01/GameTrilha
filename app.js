@@ -564,14 +564,19 @@ async function showLeaderboard() {
 }
 
 async function saveScore() {
+    // Always save locally as backup
+    saveLocalScore();
     if (!state.supabase || state.score === 0) return;
     try {
-        await state.supabase.from('scores').insert({
+        const { error } = await state.supabase.from('scores').insert({
             name: state.playerName.substring(0, 30),
             score: state.score,
             correct: state.correctCount,
             total: state.questions.length,
         });
+        if (error) {
+            console.error('Supabase insert error:', error.message, error.details, error.hint);
+        }
     } catch (e) {
         console.warn('Error saving score:', e);
     }
@@ -585,9 +590,10 @@ async function fetchScores() {
             .select('name, score')
             .order('score', { ascending: false })
             .limit(20);
-        if (error) throw error;
-        // Also save locally
-        saveLocalScore();
+        if (error) {
+            console.error('Supabase select error:', error.message, error.details, error.hint);
+            throw error;
+        }
         return data || [];
     } catch (e) {
         console.warn('Supabase fetch failed, using local:', e);
@@ -713,15 +719,4 @@ document.getElementById('player-name').addEventListener('keydown', (e) => {
 // INIT
 // ==========================================
 initSupabase();
-// If no supabase, ensure local scores work
-if (!state.supabase) {
-    // Override saveScore to also save locally  
-    const originalSaveScore = saveScore;
-    window.saveScoreOriginal = originalSaveScore;
-    // Always save locally as backup
-    const _saveScore = saveScore;
-    saveScore = function() {
-        saveLocalScore();
-        return _saveScore();
-    };
-}
+console.log('Supabase initialized:', !!state.supabase);
