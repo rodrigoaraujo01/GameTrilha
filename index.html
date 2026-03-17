@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Trilha do Conhecimento — Quiz GDTD</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+</head>
+<body>
+    <div id="app">
+        <!-- TELA 1: BEM-VINDO -->
+        <section id="screen-welcome" class="screen active">
+            <div class="card welcome-card">
+                <div class="logo-icon">🎯</div>
+                <h1>Trilha do<br>Conhecimento</h1>
+                <p class="subtitle">Capacitação em Ciência e Gestão de Dados<br>para RR-EE e EXP</p>
+                <div class="badge">SIDARE 2026</div>
+                <p class="description">
+                    Descubra o que a GDTD preparou para a sua capacitação!
+                    Responda 10 perguntas, aprenda e dispute o ranking.
+                </p>
+                <button class="btn btn-primary" onclick="showScreen('screen-name')">
+                    Jogar! 🚀
+                </button>
+                <button class="btn btn-secondary" onclick="showLeaderboard()">
+                    Ver Ranking 🏆
+                </button>
+            </div>
+        </section>
+
+        <!-- TELA 2: NOME -->
+        <section id="screen-name" class="screen">
+            <div class="card">
+                <h2>Como você se chama?</h2>
+                <p class="hint">Seu nome aparecerá no ranking</p>
+                <input type="text" id="player-name" placeholder="Digite seu nome..."
+                       maxlength="30" autocomplete="off">
+                <button class="btn btn-primary" onclick="startGame()" id="btn-start">
+                    Começar! 🎮
+                </button>
+            </div>
+        </section>
+
+        <!-- TELA 3: QUIZ -->
+        <section id="screen-quiz" class="screen">
+            <div class="quiz-header">
+                <div class="progress-info">
+                    <span id="question-counter">1 / 10</span>
+                    <span id="score-display">0 pts</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="quiz-body">
+                <div class="timer-container">
+                    <svg class="timer-svg" viewBox="0 0 100 100">
+                        <circle class="timer-bg" cx="50" cy="50" r="45"/>
+                        <circle class="timer-progress" id="timer-circle" cx="50" cy="50" r="45"/>
+                        <text class="timer-text" id="timer-text" x="50" y="56" text-anchor="middle">15</text>
+                    </svg>
+                </div>
+
+                <div class="question-card" id="question-card">
+                    <p class="question-text" id="question-text"></p>
+                    <div class="options" id="options"></div>
+                </div>
+
+                <div class="explanation-card hidden" id="explanation-card">
+                    <div class="explanation-icon" id="explanation-icon"></div>
+                    <p class="explanation-text" id="explanation-text"></p>
+                    <button class="btn btn-small" onclick="nextQuestion()">Próxima →</button>
+                </div>
+            </div>
+
+            <div class="score-popup hidden" id="score-popup">+0</div>
+        </section>
+
+        <!-- TELA 4: RESULTADO -->
+        <section id="screen-result" class="screen">
+            <div class="card result-card">
+                <div class="result-icon" id="result-icon">🏆</div>
+                <h2 id="result-title">Parabéns!</h2>
+                <div class="result-score">
+                    <span class="score-label">Sua pontuação</span>
+                    <span class="score-value" id="final-score">0</span>
+                    <span class="score-max">/ 10.000</span>
+                </div>
+                <div class="result-stats">
+                    <div class="stat">
+                        <span class="stat-value" id="stat-correct">0</span>
+                        <span class="stat-label">Acertos</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="stat-time">0s</span>
+                        <span class="stat-label">Tempo médio</span>
+                    </div>
+                </div>
+                <p class="result-message" id="result-message"></p>
+                <button class="btn btn-primary" onclick="showLeaderboard()">Ver Ranking 🏆</button>
+                <button class="btn btn-secondary" onclick="restartGame()">Jogar Novamente 🔄</button>
+            </div>
+        </section>
+
+        <!-- TELA 5: LEADERBOARD -->
+        <section id="screen-leaderboard" class="screen">
+            <div class="card leaderboard-card">
+                <h2>🏆 Ranking</h2>
+                <div class="leaderboard-list" id="leaderboard-list">
+                    <p class="loading">Carregando...</p>
+                </div>
+                <button class="btn btn-primary" onclick="restartGame()">Jogar 🎮</button>
+                <button class="btn btn-secondary" onclick="showScreen('screen-welcome')">Início</button>
+            </div>
+        </section>
+    </div>
+
+    <canvas id="confetti-canvas"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
