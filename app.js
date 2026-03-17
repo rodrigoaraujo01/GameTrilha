@@ -6,8 +6,8 @@
 // ==========================================
 // CONFIGURATION
 // ==========================================
-const SUPABASE_URL = 'YOUR_SUPABASE_URL';
-const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+const SUPABASE_URL = 'https://uhzhexuxosvxkwqypywb.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVoemhleHV4b3N2eGt3cXlweXdiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3NzM2MjIsImV4cCI6MjA4OTM0OTYyMn0.omeGmKUqpSwD_7n6544eQQGEEmzUgnvISBJI7qzcH4M';
 const QUESTIONS_PER_GAME = 10;
 const TIME_PER_QUESTION = 15; // seconds
 const MAX_SCORE_PER_QUESTION = 1000;
