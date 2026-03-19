@@ -349,6 +349,13 @@ input[type="text"]::placeholder {
     transition: background 0.2s, border-color 0.2s, transform 0.15s;
     position: relative;
     overflow: hidden;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.option-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
 }
 
 .option-btn:active {
