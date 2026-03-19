@@ -164,7 +164,7 @@ const ALL_QUESTIONS = [
         explanation: "A Trilha Cientista de Dados é descrita como a capacitação avançada em ML, DL e LLMs."
     },
     {
-        question: "Aos quais desafios se aplicam as soluções desenvolvidas na Trilha Cientista de Dados?",
+        question: "A quais desafios se aplicam as soluções desenvolvidas na Trilha Cientista de Dados?",
         options: [
             "Desafios de reservatórios e engenharia de petróleo",
             "Apenas à comunicação corporativa",
@@ -434,7 +434,7 @@ const ALL_QUESTIONS = [
 
     // ── SEÇÃO 5 · INCLUSÃO E DIVERSIDADE ─────────────────────────────────────
     {
-        question: "Qual problema social a seção de Inclusão e Diversidade do poster busca enfrentar?",
+        question: "Qual problema o curso Python para MulheRES EXPetaculares endereça?",
         options: [
             "A sub-representação de certos grupos nas áreas de STEM",
             "A falta de cursos avançados em universidades externas",
@@ -445,7 +445,7 @@ const ALL_QUESTIONS = [
         explanation: "A seção 5 relaciona a iniciativa à sub-representação de certos grupos nas áreas de STEM."
     },
     {
-        question: "Qual é o nome do curso criado para promover inclusão no ecossistema de dados?",
+        question: "Qual é o nome do curso criado para promover inclusão no ecossistema de programação?",
         options: [
             "Python para MulheRES EXPetaculares",
             "Python para Diversidade em EXP",
@@ -700,7 +700,7 @@ function handleAnswer(selected) {
     if (isCorrect) {
         state.correctCount++;
         const timeFraction = state.timeLeft / TIME_PER_QUESTION;
-        pointsEarned = Math.round(MAX_SCORE_PER_QUESTION * (0.5 + 0.5 * timeFraction));
+        pointsEarned = Math.round(MAX_SCORE_PER_QUESTION * (0.3 + 0.7 * timeFraction));
         state.score += pointsEarned;
         document.getElementById('score-display').textContent = `${state.score} pts`;
     }
@@ -986,6 +986,19 @@ function shuffleArray(arr) {
         [arr[i], arr[j]] = [arr[j], arr[i]];
     }
     return arr;
+}
+
+function prepareQuestionForRound(question) {
+    const options = question.options.map((option, index) => ({
+        option,
+        isCorrect: index === question.correct,
+    }));
+    shuffleArray(options);
+    return {
+        ...question,
+        options: options.map(item => item.option),
+        correct: options.findIndex(item => item.isCorrect),
+    };
 }
 
 function escapeHtml(text) {
