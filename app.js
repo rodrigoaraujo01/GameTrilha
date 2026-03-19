@@ -630,7 +630,9 @@ function startGame() {
         return;
     }
     state.playerName = name;
-    state.questions = shuffleArray([...ALL_QUESTIONS]).slice(0, QUESTIONS_PER_GAME);
+    state.questions = shuffleArray([...ALL_QUESTIONS])
+        .slice(0, QUESTIONS_PER_GAME)
+        .map(prepareQuestionForRound);
     state.currentIndex = 0;
     state.score = 0;
     state.correctCount = 0;
