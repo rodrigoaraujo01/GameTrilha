@@ -16,285 +16,556 @@ const MAX_SCORE_PER_QUESTION = 1000;
 // QUESTION BANK
 // ==========================================
 const ALL_QUESTIONS = [
-    // --- BLOCO 1: Capacitação e Trilhas GDTD ---
     {
-        question: "Qual foi o primeiro curso de programação oferecido pela GDTD para a comunidade de Reservatórios?",
+        question: "Segundo o poster, quais habilidades eram raras na comunidade de RR-EE em 2020?",
         options: [
-            "Python I para Reservatórios",
-            "Deep Learning para Reservatórios",
-            "Ciência de Dados para Gestores",
-            "Produtização de Soluções"
+            "Programação e ciência de dados",
+            "Perfuração e completação",
+            "Geologia e geofísica",
+            "Reservas e elevação"
         ],
         correct: 0,
-        explanation: "O Python I para Reservatórios foi o primeiro e mais popular curso da GDTD, com mais de 20 turmas realizadas ao longo dos anos."
+        explanation: "A introdução afirma que, em 2020, programação e ciência de dados eram habilidades raras na comunidade de RR-EE."
     },
     {
-        question: "Quantas trilhas de conhecimento a GDTD oferece atualmente?",
+        question: "Qual transformação geral o poster atribui ao trabalho da GDTD?",
         options: [
-            "3 trilhas",
+            "A criação de um ecossistema de capacitação em dados e IA",
+            "A substituição completa dos cursos formais por IA",
+            "A redução das atividades de treinamento presencial",
+            "A centralização de toda a formação em uma única trilha"
+        ],
+        correct: 0,
+        explanation: "O poster apresenta um ecossistema de capacitação que tornou possível ampliar o domínio de dados e IA na comunidade."
+    },
+    {
+        question: "Quantas trilhas de conhecimento foram construídas para sustentar esse ecossistema?",
+        options: [
             "5 trilhas",
-            "7 trilhas",
-            "4 trilhas"
+            "2 trilhas",
+            "8 trilhas",
+            "10 trilhas"
         ],
-        correct: 1,
-        explanation: "São 5 trilhas: Básica, Curador de Dados, Analista de Dados, Cientista de Dados e Avançada de Dados. Cada uma com múltiplos pontos de entrada e saída!"
+        correct: 0,
+        explanation: "A introdução informa que foram construídas 5 trilhas de conhecimento."
     },
     {
-        question: "O curso 'Python para MulheRES EXPetaculares' capacitou quantas mulheres na sua primeira turma (2024)?",
+        question: "Qual ideia orienta o desenho das trilhas de conhecimento?",
         options: [
-            "10",
-            "15",
-            "18",
-            "25"
+            "Atender perfis diferentes com múltiplos pontos de entrada e saída",
+            "Obrigar todos a seguir exatamente a mesma sequência",
+            "Separar os cursos apenas por senioridade hierárquica",
+            "Focar somente em formações longas e externas"
         ],
-        correct: 2,
-        explanation: "18 mulheres foram capacitadas na primeira turma, representando um aumento de 40% no número de mulheres nos cursos de Python nos últimos 4 anos."
+        correct: 0,
+        explanation: "O poster destaca que as trilhas foram reconstruídas e modernizadas com múltiplos pontos de entrada e saída."
     },
     {
-        question: "O que a sigla GDTD representa?",
+        question: "Por que o poster enfatiza múltiplos pontos de entrada e saída nas trilhas?",
         options: [
-            "Gerência de Dados e Tecnologia Digital",
-            "Gestão de Dados e Transformação Digital",
-            "Grupo de Desenvolvimento e Transformação de Dados",
-            "Gerência Digital de Tratamento de Dados"
+            "Para atender de forma individualizada as necessidades de cada profissional",
+            "Para eliminar cursos introdutórios",
+            "Para restringir o acesso aos especialistas em dados",
+            "Para substituir mentorias por certificações"
         ],
-        correct: 1,
-        explanation: "GDTD = Gestão de Dados e Transformação Digital. É a gerência responsável pela capacitação e transformação digital no RES."
+        correct: 0,
+        explanation: "A seção 2 afirma que a reconstrução das trilhas busca atender de forma individualizada as necessidades de cada profissional."
     },
     {
-        question: "Qual destes NÃO é um curso de 'IA para Disciplinas' oferecido pela GDTD?",
+        question: "Qual é o papel da Trilha Básica Gestão de Dados no ecossistema?",
         options: [
-            "IA para Geologia",
-            "IA para Simulação de Reservatórios",
-            "IA para Perfuração",
-            "IA para Petrofísica"
+            "Oferecer capacitação fundamental para todos os profissionais de RR-EE e EXP",
+            "Formar apenas cientistas de dados avançados",
+            "Preparar exclusivamente para certificações internacionais",
+            "Treinar somente quem já domina Python"
         ],
-        correct: 2,
-        explanation: "Os cursos de IA para Disciplinas cobrem: Simulação de Reservatórios, Petrofísica, Avaliação de Reservatórios, Geologia, Geofísica, Gerenciamento de Reservatórios, Elevação e Escoamento e Reservas."
+        correct: 0,
+        explanation: "A trilha básica é descrita como a capacitação fundamental em governança, qualidade e cultura de dados para todos os profissionais."
     },
     {
-        question: "A Trilha Básica GDTD inclui qual destes cursos como principal?",
+        question: "Na Trilha Básica Gestão de Dados, a formação vai de que tipo de conteúdo até qual tema mais amplo?",
         options: [
-            "Python II para Reservatórios",
-            "Deep Learning 1",
-            "Storytelling com Dados",
-            "Machine Learning I"
+            "De storytelling com dados até transformação digital",
+            "De geologia básica até perfuração direcional",
+            "De petrofísica até simulação numérica",
+            "De reservatórios até gestão financeira"
         ],
-        correct: 2,
-        explanation: "Storytelling com Dados é um dos cursos principais da Trilha Básica, junto com Gestão e Governança de Dados e Conscientização em Transformação Digital."
+        correct: 0,
+        explanation: "O poster diz que a trilha básica aborda desde storytelling com dados até transformação digital."
     },
     {
-        question: "Qual é a carga horária do curso Python I para Reservatórios?",
+        question: "Além de cultura de dados, quais temas aparecem como base da Trilha Básica?",
         options: [
-            "8 horas",
-            "12 horas",
-            "16 horas",
-            "24 horas"
+            "Governança e qualidade de dados",
+            "Apenas deep learning e LLMs",
+            "Somente gestão acadêmica",
+            "Perfuração e elevação artificial"
         ],
-        correct: 1,
-        explanation: "O Python I para Reservatórios tem 12h de carga horária e é pré-requisito para diversas outras formações nas trilhas da GDTD."
+        correct: 0,
+        explanation: "A descrição da trilha básica fala em governança, qualidade e cultura de dados."
     },
     {
-        question: "Quais certificações são mencionadas na Trilha Avançada de Dados?",
+        question: "Qual é o foco principal da Trilha Intermediária Gestão e Curadoria?",
         options: [
-            "AWS e Azure",
+            "Gestão, saneamento e arquitetura de dados de geociências e geoengenharia",
+            "Modelos de linguagem para automação de texto",
+            "Somente visualização de dados em Power BI",
+            "Criação de podcasts com IA"
+        ],
+        correct: 0,
+        explanation: "A trilha intermediária é descrita como voltada à gestão, saneamento e arquitetura de dados de geociências e geoengenharia."
+    },
+    {
+        question: "Que tipo de atuação profissional a Trilha Intermediária pretende desenvolver?",
+        options: [
+            "A de guardião da qualidade e integridade dos dados",
+            "A de instrutor exclusivo de IA generativa",
+            "A de gerente financeiro do portfólio",
+            "A de especialista em licenciamento ambiental"
+        ],
+        correct: 0,
+        explanation: "O poster afirma que essa trilha prepara o profissional para atuar como guardião da qualidade e integridade dos dados."
+    },
+    {
+        question: "Qual trilha conecta análise e visualização de dados com ferramentas como Python e Power BI?",
+        options: [
+            "Trilha Analista de Dados",
+            "Trilha Básica Gestão de Dados",
+            "Trilha Avançada Gestão de Dados",
+            "Trilha Intermediária Gestão e Curadoria"
+        ],
+        correct: 0,
+        explanation: "A Trilha Analista de Dados combina programação, análise e visualização usando Python e Power BI."
+    },
+    {
+        question: "Qual é o resultado esperado da Trilha Analista de Dados no contexto de E&P?",
+        options: [
+            "Transformar dados em informações acionáveis",
+            "Substituir a interpretação humana por dashboards",
+            "Eliminar a necessidade de curadoria de dados",
+            "Focar apenas em apresentações executivas"
+        ],
+        correct: 0,
+        explanation: "A trilha analista é apresentada como um caminho para transformar dados em informações acionáveis no contexto de E&P."
+    },
+    {
+        question: "Qual trilha aprofunda Machine Learning, Deep Learning e modelos de linguagem?",
+        options: [
+            "Trilha Cientista de Dados",
+            "Trilha Básica Gestão de Dados",
+            "Trilha Intermediária Gestão e Curadoria",
+            "Trilha de Inclusão e Diversidade"
+        ],
+        correct: 0,
+        explanation: "A Trilha Cientista de Dados é descrita como a capacitação avançada em ML, DL e LLMs."
+    },
+    {
+        question: "Segundo o poster, as soluções desenvolvidas na Trilha Cientista de Dados se aplicam a quais desafios?",
+        options: [
+            "Reservatórios e engenharia de petróleo",
+            "Apenas comunicação corporativa",
+            "Somente administração de contratos",
+            "Exclusivamente logística de materiais"
+        ],
+        correct: 0,
+        explanation: "O poster associa a trilha cientista de dados aos desafios de reservatórios e engenharia de petróleo."
+    },
+    {
+        question: "Qual trilha é apresentada como o caminho de especialização acadêmica e certificações internacionais?",
+        options: [
+            "Trilha Avançada Gestão de Dados",
+            "Trilha Cientista de Dados",
+            "Trilha Analista de Dados",
+            "Trilha Básica Gestão de Dados"
+        ],
+        correct: 0,
+        explanation: "A trilha avançada é descrita como uma especialização acadêmica e de certificações em gestão de dados."
+    },
+    {
+        question: "Que tipo de formação a Trilha Avançada Gestão de Dados inclui?",
+        options: [
+            "Cursos externos, MBAs e mestrados",
+            "Somente cursos internos curtos",
+            "Apenas eventos periódicos sem avaliação",
+            "Exclusivamente treinamentos em Power BI"
+        ],
+        correct: 0,
+        explanation: "O poster informa que a trilha avançada inclui cursos externos, MBAs, mestrados e certificações."
+    },
+    {
+        question: "Quais referências acadêmicas aparecem ligadas à Trilha Avançada Gestão de Dados?",
+        options: [
+            "Aberdeen e IFP School",
+            "USP e Unicamp",
+            "MIT e Stanford",
+            "Oxford e Cambridge"
+        ],
+        correct: 0,
+        explanation: "O poster cita Aberdeen e IFP School como universidades de referência nessa trilha."
+    },
+    {
+        question: "Quais certificações são citadas como parte da trilha avançada?",
+        options: [
             "DAMA e PPDM",
             "PMP e Scrum",
-            "Google Cloud e IBM"
+            "AWS e Azure",
+            "ITIL e COBIT"
         ],
-        correct: 1,
-        explanation: "DAMA (Data Management Association) e PPDM (Professional Petroleum Data Management) são as certificações de referência para gestão de dados no setor de óleo e gás."
+        correct: 0,
+        explanation: "As certificações mencionadas no poster são DAMA e PPDM."
     },
     {
-        question: "A Trilha de Cientista de Dados inclui qual tópico como opcional?",
+        question: "Como o poster descreve a grade de cursos de programação e ciência de dados?",
         options: [
-            "Gestão de Projetos",
-            "Reinforcement Learning",
-            "Gestão de Dados",
-            "Storytelling"
+            "Progressiva, do básico ao avançado",
+            "Restrita a um único nível introdutório",
+            "Voltada apenas para pesquisa acadêmica",
+            "Substituída pelas trilhas de IA para domínio"
         ],
-        correct: 1,
-        explanation: "A trilha de Cientista de Dados inclui cursos de LLM e Reinforcement Learning como opcionais, refletindo as tecnologias mais avançadas da área."
+        correct: 0,
+        explanation: "A seção 3 fala em uma grade progressiva de cursos técnicos e em progressão do básico ao avançado."
     },
     {
-        question: "Qual curso da Trilha Curador de Dados aborda conformidade legal?",
+        question: "Qual mensagem o poster passa ao dizer que os cursos foram desenvolvidos no RES e adaptados à realidade de E&P?",
         options: [
-            "Governança de Dados",
-            "Curador de Dados Programa Básico",
-            "Conformidade Legal Aplicada a Dados Geológicos",
-            "Qualidade de Dados"
+            "Que a capacitação foi pensada para problemas reais do trabalho",
+            "Que o conteúdo evita qualquer aplicação prática",
+            "Que os cursos servem apenas para uso externo",
+            "Que a formação depende exclusivamente de fornecedores"
         ],
-        correct: 2,
-        explanation: "O curso 'Conformidade Legal Aplicada a Dados Geológicos' (20h) é parte da trilha complementar do Curador de Dados, garantindo alinhamento regulatório."
-    },
-    // --- BLOCO 2: Ferramentas de IA para Aprendizado ---
-    {
-        question: "Qual ferramenta de IA é ideal para gerar podcasts e resumos de áudio a partir de documentos técnicos?",
-        options: [
-            "ChatGPT",
-            "NotebookLM (Google)",
-            "Midjourney",
-            "DALL-E"
-        ],
-        correct: 1,
-        explanation: "O NotebookLM do Google permite carregar documentos e gerar podcasts, resumos e conversas sobre o conteúdo — excelente para aprender no trânsito ou Academia!"
+        correct: 0,
+        explanation: "A adaptação à realidade de E&P indica foco em contexto real de trabalho, não em exemplos genéricos."
     },
     {
-        question: "Como LLMs (Large Language Models) podem ajudar no aprendizado de conteúdos complexos?",
+        question: "O que a progressão contínua de competências sugere sobre a formação apresentada no poster?",
         options: [
-            "Substituindo os professores completamente",
-            "Gerando certificados automáticos",
-            "Permitindo aprendizado incremental via chats e explicações personalizadas",
-            "Criando provas automaticamente"
+            "Que o aprendizado pode evoluir de forma acumulativa ao longo do tempo",
+            "Que cada curso é isolado e sem relação com os demais",
+            "Que o objetivo é substituir a experiência prática",
+            "Que só vale a pena fazer os módulos finais"
         ],
-        correct: 2,
-        explanation: "LLMs permitem que conteúdos complexos sejam explorados de forma incremental e personalizada, adaptando a explicação ao nível do aluno — como uma tutoria particular 24h."
+        correct: 0,
+        explanation: "O poster destaca construção contínua de competências, indicando evolução gradual e conectada entre os cursos."
     },
     {
-        question: "Qual dessas é uma aplicação prática do Gemini para estudo?",
+        question: "Qual destes cursos faz parte da grade de programação e ciência de dados mostrada no poster?",
         options: [
-            "Compilar código Python",
-            "Criar infográficos e materiais visuais a partir de conteúdo técnico",
-            "Gerenciar repositórios Git",
-            "Simular reservatórios"
+            "Python 1 para RR-EE",
+            "IA Avançada",
+            "Ciência de Dados para Perfuração",
+            "Modelagem de Reservatórios com Python"
         ],
-        correct: 1,
-        explanation: "O Gemini pode ser usado para construir infográficos, resumos visuais e materiais de estudo atraentes a partir de textos técnicos densos."
+        correct: 0,
+        explanation: "'Python 1 para RR-EE' aparece explicitamente na grade do poster."
     },
     {
-        question: "O que são mapas mentais gerados por IA e como podem ajudar na capacitação?",
+        question: "Qual curso do poster mostra que a formação não ficou restrita a programação pura?",
         options: [
-            "Imagens aleatórias geradas por redes neurais",
-            "Diagramas hierárquicos que organizam visualmente conceitos e suas relações",
-            "Mapas geográficos de jazidas de petróleo",
-            "Listas lineares de tópicos de estudo"
+            "Ciência de Dados para Gestores",
+            "IA para Completação",
+            "Modelagem de Reservatórios com Python",
+            "IA Avançada"
         ],
-        correct: 1,
-        explanation: "Mapas mentais gerados por IA (ex: via NotebookLM ou ferramentas como Miro AI) organizam conceitos em hierarquias visuais, facilitando a compreensão de temas interconectados."
+        correct: 0,
+        explanation: "'Ciência de Dados para Gestores' amplia a oferta para além da programação tradicional."
     },
     {
-        question: "Qual é a principal vantagem de usar IA generativa como ferramenta complementar de estudo?",
+        question: "Qual curso da grade indica a entrada formal de IA no percurso de capacitação geral?",
         options: [
-            "Elimina a necessidade de cursos formais",
-            "Permite aprender no próprio ritmo, tirando dúvidas sob demanda",
-            "Gera automaticamente os certificados necessários",
-            "Substitui completamente o instrutor"
+            "Introdução à Inteligência Artificial",
+            "IA para Reservas",
+            "IA para Geologia",
+            "Chat Petrobras"
         ],
-        correct: 1,
-        explanation: "A IA generativa complementa os cursos formais permitindo exploração sob demanda — você pode aprofundar um tema, pedir exemplos ou simplificações a qualquer momento."
-    },
-    // --- BLOCO 3: Ciência de Dados e conceitos ---
-    {
-        question: "O que é 'Prompt Engineering' e por que é relevante para engenheiros de reservatórios?",
-        options: [
-            "Técnica de perfuração assistida por computador",
-            "A arte de formular perguntas eficazes para ferramentas de IA",
-            "Método de simulação de fluxo em reservatórios",
-            "Processo de otimização de bombas de elevação"
-        ],
-        correct: 1,
-        explanation: "Prompt Engineering é a habilidade de formular perguntas/comandos eficazes para IAs. Está na Trilha Analista de Dados como curso opcional indicado pelo DeepLearning.AI."
+        correct: 0,
+        explanation: "'Introdução à Inteligência Artificial' aparece na grade de cursos técnicos como parte da evolução da formação."
     },
     {
-        question: "O que são PINNs (Physics-Informed Neural Networks)?",
+        question: "Qual curso da seção 3 evidencia um avanço para técnicas mais sofisticadas de aprendizagem?",
         options: [
-            "Redes sociais para engenheiros de petróleo",
-            "Redes neurais que incorporam leis da física no seu treinamento",
-            "Protocolos de integração de dados",
-            "Painéis de instrumentação numérica"
+            "Deep Learning 1 para RR-RR",
+            "Storytelling com Dados",
+            "Gestão de Dados Básica",
+            "Encontros de Cientistas de Dados"
         ],
-        correct: 1,
-        explanation: "PINNs combinam redes neurais com equações da física, sendo especialmente úteis em simulação de reservatórios. A GDTD oferece um Workshop específico sobre o tema!"
+        correct: 0,
+        explanation: "O poster lista 'Deep Learning 1 para RR-RR' como parte da progressão técnica mais avançada."
     },
     {
-        question: "Na Trilha de Cientista de Dados, qual é a diferença entre Machine Learning I e II?",
+        question: "Qual curso da grade reforça a ideia de conectar IA ao conhecimento físico do domínio?",
         options: [
-            "I é teórico e II é prático",
-            "I trata de Aprendizado Supervisionado e II de Não Supervisionado",
-            "I usa Python e II usa R",
-            "I é para iniciantes e II para avançados"
+            "Physics Informed Machine Learning",
+            "Python 1 para RR-EE",
+            "Ciência de Dados para Gestores",
+            "Introdução à Inteligência Artificial"
         ],
-        correct: 1,
-        explanation: "ML I (35h) foca em Aprendizado Supervisionado (classificação, regressão) e ML II (16h) em Aprendizado Não Supervisionado (clustering, redução de dimensionalidade)."
+        correct: 0,
+        explanation: "'Physics Informed Machine Learning' explicita a conexão entre aprendizado de máquina e conhecimento físico do domínio."
     },
     {
-        question: "Qual é a área que NÃO faz parte das esferas de conhecimento cobertas pela GDTD?",
+        question: "Qual curso da seção 3 mostra preocupação com levar modelos à prática?",
         options: [
-            "Gestão de Dados",
-            "Python",
-            "Perfuração Direcional",
-            "Inteligência Artificial"
+            "Produtização de Soluções",
+            "Ciência de Dados para Gestores",
+            "Python 2 para RR-EE",
+            "Deep Learning 1 para RR-RR"
         ],
-        correct: 2,
-        explanation: "As esferas de conhecimento da GDTD são: Gestão de Dados, Qualidade de Dados, Curadoria de Dados, Python, PowerBI, IA e GenAI."
+        correct: 0,
+        explanation: "'Produtização de Soluções' aponta para a etapa de transformar soluções em algo aplicável no contexto real."
     },
     {
-        question: "O que significa STEM e por que é relevante para o programa da GDTD?",
+        question: "Em que contexto temporal o poster situa a criação dos cursos de IA específicos para os domínios?",
         options: [
-            "System Technology for Energy Management",
-            "Science, Technology, Engineering and Mathematics — área com sub-representação de certos grupos",
-            "Standard Training for Engineering Methods",
-            "Simulation Tools for Engineering Models"
+            "Em 2025",
+            "Em 2020",
+            "Em 2023",
+            "Em 2026"
         ],
-        correct: 1,
-        explanation: "STEM é a sigla para ciência, tecnologia, engenharia e matemática. O programa 'Python para MulheRES EXPetaculares' busca reduzir a sub-representação de mulheres nessas áreas."
-    },
-    // --- BLOCO 4: Ferramentas modernas e futuro ---
-    {
-        question: "Qual plataforma é recomendada na Trilha de Cientista de Dados para cursos de LLM e agentes?",
-        options: [
-            "Udemy",
-            "DeepLearning.AI",
-            "Khan Academy",
-            "Alura"
-        ],
-        correct: 1,
-        explanation: "Diversos cursos opcionais da trilha de Cientista de Dados são do DeepLearning.AI, incluindo LangChain, LlamaIndex, ChromaDB e LLMOps."
+        correct: 0,
+        explanation: "A seção 4 começa afirmando que, em 2025, a GDTD criou esses cursos específicos para os domínios."
     },
     {
-        question: "O que é RAG (Retrieval Augmented Generation) mencionado nos cursos da trilha avançada?",
+        question: "A parceria com as Gerências Funcionais, na seção de IA para RR-EE, sugere qual estratégia?",
         options: [
-            "Tipo de rocha reservatório",
-            "Técnica que combina busca em documentos próprios com geração de texto por IA",
-            "Relatório Anual de Gestão",
-            "Método de recuperação de petróleo"
+            "Construir capacitação conectada às necessidades dos domínios",
+            "Terceirizar toda a formação para instituições externas",
+            "Padronizar um conteúdo genérico para toda a companhia",
+            "Substituir as trilhas por treinamentos avulsos"
         ],
-        correct: 1,
-        explanation: "RAG permite que LLMs consultem seus próprios documentos antes de responder — essencial para uso corporativo. O curso 'Building Agentic RAG with LlamaIndex' está na trilha!"
+        correct: 0,
+        explanation: "A parceria com as Gerências Funcionais reforça a ideia de cursos alinhados às necessidades concretas de cada domínio."
     },
     {
-        question: "Qual abordagem a GDTD adotou ao reconstruir as trilhas de conhecimento?",
+        question: "Qual era o objetivo central dos cursos de Introdução à IA específicos para os domínios?",
         options: [
-            "Trilha linear obrigatória de 200 horas",
-            "Múltiplos pontos de entrada e saída para atender cada perfil",
-            "Trilha única para todos os profissionais",
-            "Somente cursos presenciais"
+            "Aplicar essas tecnologias ao dia a dia de geocientistas e engenheiros",
+            "Substituir completamente os cursos formais",
+            "Treinar apenas especialistas em computação",
+            "Criar um programa voltado somente a gestão"
         ],
-        correct: 1,
-        explanation: "As trilhas foram modernizadas com múltiplos pontos de entrada e saída, atendendo de forma individualizada as necessidades de cada profissional."
+        correct: 0,
+        explanation: "A seção 4 afirma que os cursos buscavam aplicar essas tecnologias ao dia a dia de geocientistas e engenheiros."
     },
     {
-        question: "Além de cursos, qual evento recorrente a GDTD promove para a comunidade de dados?",
+        question: "Por que o poster destaca que cada curso de IA é construído com exemplos e dados do domínio específico?",
         options: [
-            "Maratona de Programação",
-            "Encontros de Cientistas de Dados do RES-EE",
-            "Hackathon de IA",
-            "Semana do Petróleo"
+            "Porque isso ajuda o profissional a enxergar a aplicação direta da IA no seu trabalho",
+            "Porque evita qualquer adaptação ao contexto da área",
+            "Porque o foco principal é a teoria abstrata dos modelos",
+            "Porque elimina a necessidade de prática"
         ],
-        correct: 1,
-        explanation: "Os Encontros de Cientistas de Dados do RES-EE são eventos regulares para troca de experiências e disseminação de conhecimento na comunidade."
+        correct: 0,
+        explanation: "O poster liga exemplos e dados do domínio à visualização da aplicação direta da IA no contexto de trabalho."
     },
     {
-        question: "Na Trilha Avançada de Dados, qual tipo de formação de longa duração é oferecida?",
+        question: "Qual destes cursos exemplifica a estratégia de IA para domínios específicos mostrada no poster?",
         options: [
-            "Apenas certificações online",
-            "MBA e Mestrado em Gestão de Dados voltados para energia",
-            "Doutorado em IA",
-            "Residência técnica"
+            "IA para Avaliação",
+            "IA para Completação",
+            "IA Avançada",
+            "Modelagem de Reservatórios com Python"
         ],
-        correct: 1,
-        explanation: "A Trilha Avançada inclui MBAs (PUC Minas, RGU) e Mestrados (Aberdeen, IFP School) especializados em gestão de dados para o setor de energia."
+        correct: 0,
+        explanation: "'IA para Avaliação' aparece entre os cursos de IA para RR-EE mostrados no poster."
     },
+    {
+        question: "Qual destes também faz parte dos cursos de IA para RR-EE listados no poster?",
+        options: [
+            "IA para Elevação",
+            "IA para Reservas",
+            "IA para Completação",
+            "Ciência de Dados para Perfuração"
+        ],
+        correct: 0,
+        explanation: "'IA para Elevação' aparece explicitamente entre os cursos mostrados na seção 4."
+    },
+    {
+        question: "Qual curso da seção 4 está ligado à mecânica das rochas e comportamento do meio?",
+        options: [
+            "IA para Geomecânica",
+            "IA para Simulação",
+            "IA para Avaliação",
+            "IA para Gerenciamento"
+        ],
+        correct: 0,
+        explanation: "O poster lista 'IA para Geomecânica' como um dos cursos por domínio."
+    },
+    {
+        question: "Qual destes cursos de IA é voltado explicitamente à modelagem ou análise de comportamento de reservatórios no poster?",
+        options: [
+            "IA para Simulação",
+            "IA para Gerenciamento",
+            "IA para Geologia",
+            "IA para Elevação"
+        ],
+        correct: 0,
+        explanation: "'IA para Simulação' aparece como um dos cursos da seção 4."
+    },
+    {
+        question: "Qual nome NÃO aparece entre os cursos de IA para RR-EE mostrados no poster?",
+        options: [
+            "IA para Completação",
+            "IA para Geologia",
+            "IA para Geomecânica",
+            "IA para Simulação"
+        ],
+        correct: 0,
+        explanation: "O poster lista Avaliação, Elevação, Geofísica, Geologia, Geomecânica, Gerenciamento, Petrofísica e Simulação, mas não 'IA para Completação'."
+    },
+    {
+        question: "Qual problema a seção de inclusão e diversidade busca enfrentar?",
+        options: [
+            "A sub-representação de certos grupos nas áreas de STEM",
+            "A falta de cursos avançados em universidades externas",
+            "A baixa oferta de ferramentas de IA para geologia",
+            "A ausência de certificações internacionais em dados"
+        ],
+        correct: 0,
+        explanation: "A seção 5 relaciona a iniciativa à sub-representação de certos grupos nas áreas de STEM."
+    },
+    {
+        question: "O curso Python para MulheRES EXPetaculares foi construído em parceria com qual área?",
+        options: [
+            "Exploração",
+            "Perfuração",
+            "Suprimento",
+            "Logística"
+        ],
+        correct: 0,
+        explanation: "O poster informa que o curso foi construído em parceria com a Exploração."
+    },
+    {
+        question: "O sucesso do curso Python para MulheRES EXPetaculares é associado, no poster, a quê?",
+        options: [
+            "À forte demanda por capacitação inclusiva",
+            "À substituição das trilhas existentes",
+            "Ao fim dos cursos de Python tradicionais",
+            "Ao foco exclusivo em certificações"
+        ],
+        correct: 0,
+        explanation: "O poster diz que os cursos foram extremamente disputados, evidenciando demanda por capacitação inclusiva."
+    },
+    {
+        question: "Qual resultado concreto da iniciativa de inclusão aparece em destaque no poster?",
+        options: [
+            "Aumento de 40% no número de mulheres treinadas",
+            "Redução de 40% no tempo dos cursos",
+            "Criação de 40 novas trilhas",
+            "Participação exclusiva de 40 especialistas"
+        ],
+        correct: 0,
+        explanation: "Uma das caixas de destaque da seção 5 informa aumento de 40% no número de mulheres treinadas."
+    },
+    {
+        question: "Qual informação de escala da iniciativa de inclusão também aparece no poster?",
+        options: [
+            "Foram realizadas 2 turmas em 2024 e 2025",
+            "Foram realizadas 5 turmas em 2026",
+            "Houve uma turma única sem continuidade",
+            "As turmas ocorreram apenas fora da empresa"
+        ],
+        correct: 0,
+        explanation: "A seção 5 destaca 2 turmas realizadas em 2024 e 2025."
+    },
+    {
+        question: "O que a expressão 'participação massiva de RR-EE e EXP' sugere sobre essa iniciativa?",
+        options: [
+            "Que houve engajamento amplo de diferentes partes da comunidade",
+            "Que a participação ficou restrita ao time organizador",
+            "Que o curso foi focado só em perfis técnicos avançados",
+            "Que a adesão aconteceu apenas na Exploração"
+        ],
+        correct: 0,
+        explanation: "O destaque de participação massiva indica adesão ampla da comunidade de RR-EE e EXP."
+    },
+    {
+        question: "Na seção de ferramentas de apoio ao aprendizado, qual papel os LLMs assumem?",
+        options: [
+            "O de tutores para tirar dúvidas, revisar código e explorar conceitos",
+            "O de substituir todas as trilhas de capacitação",
+            "O de certificar profissionais automaticamente",
+            "O de avaliar desempenho gerencial"
+        ],
+        correct: 0,
+        explanation: "A caixa 'LLMs como tutores' diz que Chat Petrobras e Copilot permitem tirar dúvidas, revisar código e explorar conceitos."
+    },
+    {
+        question: "Segundo o poster, qual é a principal vantagem desses tutores baseados em LLM?",
+        options: [
+            "Adaptar o aprendizado ao ritmo de cada profissional",
+            "Eliminar a necessidade de prática",
+            "Substituir todos os encontros presenciais",
+            "Restringir o conteúdo a respostas curtas"
+        ],
+        correct: 0,
+        explanation: "O poster enfatiza que os conceitos podem ser explorados de forma fácil e adaptada ao ritmo de cada profissional."
+    },
+    {
+        question: "Quais ferramentas são citadas como apoio para gerar material extra de aprendizado?",
+        options: [
+            "NotebookLM e GitHub Copilot",
+            "Power BI e DAMA",
+            "Chat Petrobras e PPDM",
+            "Aberdeen e IFP School"
+        ],
+        correct: 0,
+        explanation: "Na seção 6, NotebookLM e GitHub Copilot aparecem como ferramentas para geração de material extra."
+    },
+    {
+        question: "O poster usa a geração de podcasts a partir de documentos técnicos para ilustrar qual ideia?",
+        options: [
+            "Tornar o consumo de conteúdo mais acessível e flexível",
+            "Substituir cursos por áudio automático",
+            "Reduzir a importância dos materiais técnicos originais",
+            "Trocar ciência de dados por comunicação institucional"
+        ],
+        correct: 0,
+        explanation: "A geração de podcasts é apresentada como uma forma de consumir conteúdo técnico de maneira mais acessível."
+    },
+    {
+        question: "O que os Encontros de Cientistas de Dados agregam ao ecossistema, segundo o poster?",
+        options: [
+            "Aprender com quem já está fazendo, por meio do compartilhamento de projetos e lições aprendidas",
+            "Substituir as trilhas formais por eventos esporádicos",
+            "Oferecer apenas certificações externas",
+            "Concentrar o aprendizado em um único especialista"
+        ],
+        correct: 0,
+        explanation: "O poster descreve esses encontros como fóruns periódicos onde praticantes compartilham projetos, resultados e lições aprendidas."
+    },
+    {
+        question: "Na conclusão, como a GDTD resume o alcance da capacitação construída?",
+        options: [
+            "Como um ecossistema completo, dos conceitos fundamentais às fronteiras avançadas",
+            "Como uma coleção de cursos isolados e independentes",
+            "Como uma iniciativa limitada a ferramentas de IA generativa",
+            "Como uma trilha única para um público especializado"
+        ],
+        correct: 0,
+        explanation: "A conclusão fala em um ecossistema completo de capacitação que vai do fundamental às fronteiras avançadas."
+    },
+    {
+        question: "Qual indicador de escala da atuação recente aparece na conclusão do poster?",
+        options: [
+            "Mais de 30 turmas ministradas e mais de 300 profissionais treinados",
+            "Exatamente 5 turmas e 50 profissionais treinados",
+            "Somente cursos piloto sem continuidade",
+            "Uma única formação anual obrigatória"
+        ],
+        correct: 0,
+        explanation: "A conclusão destaca que, ao longo dos últimos anos, mais de 30 turmas foram ministradas e mais de 300 profissionais treinados."
+    },
+    {
+        question: "Que direção futura o poster aponta para 2026?",
+        options: [
+            "Novas turmas, novos cursos e criação de mentorias digitais",
+            "Encerramento das trilhas e foco apenas em eventos",
+            "Substituição dos cursos por certificações obrigatórias",
+            "Redução do portfólio para conteúdos introdutórios"
+        ],
+        correct: 0,
+        explanation: "A conclusão prevê novas turmas, novos cursos como Deep Learning 2 para RR-EE e IA para Reservas, além de mentorias digitais."
+    }
 ];
 
 // ==========================================
@@ -345,7 +616,9 @@ function startGame() {
         return;
     }
     state.playerName = name;
-    state.questions = shuffleArray([...ALL_QUESTIONS]).slice(0, QUESTIONS_PER_GAME);
+    state.questions = shuffleArray([...ALL_QUESTIONS])
+        .slice(0, QUESTIONS_PER_GAME)
+        .map(prepareQuestionForRound);
     state.currentIndex = 0;
     state.score = 0;
     state.correctCount = 0;
@@ -699,6 +972,21 @@ function shuffleArray(arr) {
         [arr[i], arr[j]] = [arr[j], arr[i]];
     }
     return arr;
+}
+
+function prepareQuestionForRound(question) {
+    const options = question.options.map((option, index) => ({
+        option,
+        isCorrect: index === question.correct,
+    }));
+
+    shuffleArray(options);
+
+    return {
+        ...question,
+        options: options.map(item => item.option),
+        correct: options.findIndex(item => item.isCorrect),
+    };
 }
 
 function escapeHtml(text) {
